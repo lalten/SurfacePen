@@ -1,8 +1,11 @@
 # SurfacePen
-Use the Microsoft Surface BLE Pen to do something different than opening OneNote
+Use the Microsoft Surface BLE Pen to do something different than opening OneNote.
 
 
-I used the [Microsoft SysInternals Process Monitor](https://technet.microsoft.com/sysinternals/bb896645) to find out what actually happens when you press the pen's purple button.
+## Intro ##
+The purple Surface Pen button normally launches OneNote. I don't really use OneNote, but I find it interesting to control my tablet "remotely".
+
+I used Microsoft SysInternal's [Process Monitor](https://technet.microsoft.com/sysinternals/bb896645) to find out what actually happens when you press the pen's purple button.
 
 ## How it works ##
 
@@ -31,6 +34,8 @@ and compiled it to pen.exe and updated the registry key to its path (*C:\bin\pen
 
 ## Files ##
 
+**pen.exe** is the compiled version of pen.ahk
+
 **pen.reg** contains a registry patch as per [KB310516]https://support.microsoft.com/en-us/kb/310516). It will change the value of the key given above to the value *C:\bin\pen.exe*.
 
 **reset.reg** will reset that value to the default (*C:\Program Files\Microsoft Office 15\Root\Office15\ONENOTEM.EXE*)
@@ -39,5 +44,5 @@ and compiled it to pen.exe and updated the registry key to its path (*C:\bin\pen
 ## Issues ##
 The double press always dims the screen shortly and then takes a screenshot before executing the program. I couldn't figure out how to suppress that. Maybe someone has an idea?
 
-
+## Conclusion ##
 Now I can use my Surface Pen to control presentations :)
